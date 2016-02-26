@@ -80,7 +80,7 @@ OnedrivePicker.prototype.pick = function(options, callback, user){
             try {
               var data = response.data.files[0];
               console.log("File selected using Onedrive service",data);
-              var url = Picker.updateQueryString(data.upload_location, 'access_token', token);
+              var url = CloudPicker.updateQueryString(data.upload_location, 'access_token', token);
               var file = {
                 id: data.id.split('.')[2],
                 name: data.name,

@@ -154,7 +154,7 @@ GooglePicker.prototype._transform = function(file, callback) {
 
     function transformFile(metadata, callback) {
         var token = Meteor.user().services.google.accessToken;
-        var url = Picker.updateQueryString(metadata.url, 'access_token', token);
+        var url = CloudPicker.updateQueryString(metadata.url, 'access_token', token);
         var newfile = {
             id: file.id,
             url: url,

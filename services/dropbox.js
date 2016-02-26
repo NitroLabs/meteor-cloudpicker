@@ -105,7 +105,7 @@ DropboxPicker.prototype.pick = function(options, callback) {
     function transformFile(file) {
         // Transform the google response to the Picker.file
         var token = Meteor.user().services.dropbox.accessToken;
-        var url = Picker.updateQueryString(file.link, "access_token", token);
+        var url = CloudPicker.updateQueryString(file.link, "access_token", token);
         var customizedRemoteId = getDropboxCustomizedRemoteId(file.link);
         console.log(file);
         return {

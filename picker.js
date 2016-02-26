@@ -4,8 +4,8 @@ CloudPicker = {
 
 CloudPicker.register = function(name, picker) {
     // Register a new service with Picker
-    Picker._services[name] = picker;
-    Picker["pickWith" + name] = function(options, callback) {
+    CloudPicker._services[name] = picker;
+    CloudPicker["pickWith" + name] = function(options, callback) {
         if (_.isFunction(options) && !callback) {
             options = {};
             callback = options;

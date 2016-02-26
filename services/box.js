@@ -113,7 +113,7 @@ BoxPicker.prototype.pick = function(options, callback) {
 BoxPicker.prototype._transform = function(file, callback) {
 	// Return the transformed file
 	var token = Meteor.user().services.box.accessToken;
-	var url = Picker.updateQueryString(file.url,'access_token',token);
+	var url = CloudPicker.updateQueryString(file.url,'access_token',token);
 	var newfile = {
 		id: file.id,
 		url: url,
