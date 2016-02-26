@@ -83,7 +83,8 @@ GooglePicker.prototype.pick = function(options, callback) {
             var picker = new google.picker.PickerBuilder().
             setOAuthToken(token).
             setDeveloperKey(service.apiKey).
-            setCallback(pickerCallback);
+            setCallback(pickerCallback).
+            setOrigin(window.location.protocol + '//' + window.location.host);
             // Set the views specified in the options
             _.each(self._options.views, function(viewname) {
                 picker.addView(self._getView(viewname));
